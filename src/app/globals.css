@@ -1,6 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap");
 @import "tailwindcss";
 
+/*
+  Allow the CopilotChat component to fill the container
+  (ChatArea's wrapper div style={...} className="h-full")
+*/
+.copilotKitChat {
+  height: 100%;
+}
+
+
 @theme inline {
   --color-primary: #FFB600;
   --color-primary-hover: #e5a300;
