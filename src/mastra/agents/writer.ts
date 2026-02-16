@@ -7,6 +7,7 @@
 
 import { google } from "@ai-sdk/google";
 import { Agent } from "@mastra/core/agent";
+import { Memory } from "@mastra/memory";
 import {
   searchCofactsDatabase,
   getSingleCofactsArticle,
@@ -28,6 +29,7 @@ export const cofactsWriter = new Agent({
   description:
     "AI agent that orchestrates fact-checking process and composes final fact-check replies for Cofacts.",
   model: google("gemini-2.5-pro"),
+  memory: new Memory(),
   tools: {
     searchCofactsDatabase,
     getSingleCofactsArticle,
