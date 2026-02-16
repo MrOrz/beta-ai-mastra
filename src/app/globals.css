@@ -1,31 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap");
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-primary: #FFB600;
+  --color-primary-hover: #e5a300;
+  --color-bg-warm: #f8f8f5;
+  --color-bg-dark: #231f0f;
+  --color-text-main: #333333;
+  --color-text-muted: #666666;
+  --color-bubble-user: #F5F5F5;
+  --color-border-subtle: #e5e5e5;
+  --color-badge-bg: #F5F5F5;
+  --color-badge-border: #E5E5E5;
+  --color-badge-text: #666666;
+  --font-display: "Noto Sans TC", sans-serif;
+  --font-body: "Noto Sans TC", sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Noto Sans TC", sans-serif;
+  color: var(--color-text-main);
+  background: var(--color-bg-warm);
 }
 
 body,
 html {
   height: 100%;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Tool Badge */
+.tool-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  background-color: #F5F5F5;
+  border: 1px solid #E5E5E5;
+  color: #666666;
+  padding: 0.125rem 0.625rem;
+  border-radius: 9999px;
+  font-family: monospace;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.tool-badge:hover {
+  background-color: #EEEEEE;
+  border-color: #d4d4d4;
+  color: #333333;
+}
+
+/* Typing Indicator */
+.typing-indicator span {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  background-color: #666;
+  border-radius: 50%;
+  animation: typing 1.4s infinite ease-in-out both;
+  margin: 0 1px;
+}
+
+.typing-indicator span:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes typing {
+
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+  }
+
+  40% {
+    transform: scale(1);
+  }
+}
+
+/* Chat container */
+.chat-container {
+  scrollbar-gutter: stable;
+}
+
+/* Bottom Sheet */
+.bottom-sheet-shadow {
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
 }
