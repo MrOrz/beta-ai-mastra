@@ -76,7 +76,7 @@ export default function CopilotKitPage() {
 function YourMainContent({ themeColor }: { themeColor: string }) {
   // 🪁 Shared State: https://docs.copilotkit.ai/mastra/shared-state/in-app-agent-read
   const { state, setState } = useCoAgent<AgentState>({
-    name: "weatherAgent",
+    name: "cofactsWriter",
     initialState: {
       proverbs: [
         "CopilotKit may be new, but its the best thing since sliced bread.",

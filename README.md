@@ -4,57 +4,34 @@ This is a starter template for building AI agents using [Mastra](https://mastra.
 
 ## Prerequisites
 
-- Node.js 18+ 
-- Any of the following package managers:
-  - pnpm (recommended)
-  - npm
-  - yarn
-  - bun
-
-> **Note:** This repository ignores lock files (package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb) to avoid conflicts between different package managers. Each developer should generate their own lock file using their preferred package manager. After that, make sure to delete it from the .gitignore.
+- Node.js 18+
+- [pnpm](https://pnpm.io/)
 
 ## Getting Started
 
-1. Add your OpenAI API key
+1. Add your API keys
 ```bash
-# you can use whatever model Mastra supports
+# Required for Gemini models used in Cofacts agents
+echo "GOOGLE_GENERATIVE_AI_API_KEY=your-key-here" >> .env
+
+# Optional: if you use OpenAI models
 echo "OPENAI_API_KEY=your-key-here" >> .env
 ```
 
-2. Install dependencies using your preferred package manager:
+2. Install dependencies:
 ```bash
-# Using pnpm (recommended)
 pnpm install
-
-# Using npm
-npm install
-
-# Using yarn
-yarn install
-
-# Using bun
-bun install
 ```
 
-2. Start the development server:
+3. Start the development server:
 ```bash
-# Using pnpm
 pnpm dev
-
-# Using npm
-npm run dev
-
-# Using yarn
-yarn dev
-
-# Using bun
-bun run dev
 ```
 
 This will start both the UI and agent servers concurrently.
 
 ## Available Scripts
-The following scripts can also be run using your preferred package manager:
+The following scripts can also be run using pnpm:
 - `dev` - Starts both UI and agent servers in development mode
 - `dev:debug` - Starts development servers with debug logging enabled
 - `build` - Builds the application for production
