@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Noto_Sans_TC } from "next/font/google";
-import { CopilotKit } from "@copilotkit/react-core";
 import "./globals.css";
 import "@copilotkit/react-ui/styles.css";
 
@@ -24,9 +23,7 @@ export default function RootLayout({
   return (
     <html lang="zh-TW">
       <body className={`${notoSansTC.variable} antialiased`}>
-        <CopilotKit runtimeUrl="/api/copilotkit" agent="cofactsWriter">
-          {children}
-        </CopilotKit>
+        {children}
       </body>
     </html>
   );

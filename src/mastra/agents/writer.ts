@@ -29,7 +29,11 @@ export const cofactsWriter = new Agent({
   description:
     "AI agent that orchestrates fact-checking process and composes final fact-check replies for Cofacts.",
   model: google("gemini-2.5-pro"),
-  memory: new Memory(),
+  memory: new Memory({
+    options: {
+      generateTitle: true,
+    },
+  }),
   tools: {
     searchCofactsDatabase,
     getSingleCofactsArticle,

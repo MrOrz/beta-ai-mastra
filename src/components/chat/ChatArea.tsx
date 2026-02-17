@@ -1,6 +1,4 @@
 import { CopilotChat } from "@copilotkit/react-ui";
-import { CopilotKitCSSProperties } from "@copilotkit/react-ui";
-import "@copilotkit/react-ui/styles.css";
 
 export function ChatArea() {
   // Cast to any to allow custom CSS variables not in the strict type definition
