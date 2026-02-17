@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 type Thread = {
   id: string;
@@ -118,15 +119,14 @@ export function Sidebar({
               {threads.map((thread) => {
                 const isActive = thread.id === activeThreadId;
                 return (
-                  <a
+                  <Link
                     key={thread.id}
                     className={`flex flex-col p-3 rounded-lg group transition-colors cursor-pointer ${isActive
-                        ? "bg-primary/10 text-text-main"
-                        : "hover:bg-gray-50 text-text-muted"
+                      ? "bg-primary/10 text-text-main"
+                      : "hover:bg-gray-50 text-text-muted"
                       }`}
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault();
+                    href={`/c/${thread.id}`}
+                    onClick={() => {
                       onSelectThread(thread.id);
                     }}
                   >
@@ -141,7 +141,7 @@ export function Sidebar({
                         {formatRelativeTime(thread.updatedAt)}
                       </div>
                     </div>
-                  </a>
+                  </Link>
                 );
               })}
             </>
